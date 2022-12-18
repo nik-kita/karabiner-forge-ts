@@ -1,4 +1,5 @@
-import { writeFile } from 'fs';
+import { readFile, writeFile } from 'fs';
+import { homedir } from 'os';
 import { join } from 'path';
 import { Rule } from './rule';
 import { KarabinerConfigType } from './types/karabiner-config.type';
@@ -36,8 +37,10 @@ export class Forge {
     return forge as Pick<Forge, 'addRule'>;
   }
 
-  public addRule(title: string) {
-    return Rule.init(title, this) as Pick<Rule, 'addManipulator'>;
+  public addRule(title?: string) {
+    const _title = title || `default for ${this.title}`;
+
+    return Rule.init(_title, this) as Pick<Rule, 'addManipulator'>;
   }
 
   public async generateJson(
@@ -61,13 +64,34 @@ export class Forge {
       rules: this.rules,
       ...options,
     };
+    const fileName = `${this.title.toLocaleLowerCase().replaceAll(' ', '_')}.json`;
     const output = outputPath || join(
       process.cwd(),
       'out',
-      `${this.title.toLocaleLowerCase().replaceAll(' ', '_')}.json`,
+      fileName,
     );
 
     const json = JSON.stringify(karabiner, null, 2);
+    const karabinerPath = join(homedir(), '.config/karabiner/assets/complex_modifications', fileName);
+
+    await new Promise<void>((resolve, reject) => {
+      readFile(karabinerPath, (err) => {
+        if (err) {
+          writeFile(karabinerPath, json, { encoding: 'utf-8' }, (error) => {
+            if (error) reject(error);
+            resolve();
+          });
+        } else {
+          writeFile(`${karabinerPath.split('.json')[0]}.new.json`, JSON.stringify({
+            ...karabiner,
+            title: `${this.title} new`,
+          }, null, 2), { encoding: 'utf-8' }, (error) => {
+            if (error) reject(error);
+            resolve();
+          });
+        }
+      });
+    });
 
     await new Promise<void>((resolve, reject) => {
       writeFile(output, json, { encoding: 'utf-8' }, (err) => {

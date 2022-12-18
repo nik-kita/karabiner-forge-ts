@@ -11,5 +11,5 @@ export type FromType<
   } | {
     mandatory?: ModifierType[],
     optional: ModifierType[],
-  },
+  } | ModifierType[],
 };

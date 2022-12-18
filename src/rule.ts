@@ -21,6 +21,8 @@ export class Rule {
       manipulators: this.manipulators,
     });
 
-    return this.parent as Pick<Forge, 'addRule' | 'generateJson'>;
+    return this.parent as Omit<Forge, 'addRule' | 'rules'> & {
+      addRule: (title: string) => ReturnType<Forge['addRule']>,
+    } & Pick<Forge, 'generateJson'>;
   }
 }

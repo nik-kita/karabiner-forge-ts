@@ -26,6 +26,8 @@ const key_codes = [
   'keypad_hyphen',
   'keypad_num_lock',
   'keypad_equal_sign',
+  'left_shift',
+  'right_shift',
   'keypad_slash',
   'keypad_asterisk',
   '0',
