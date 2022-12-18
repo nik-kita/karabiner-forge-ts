@@ -1,0 +1,30 @@
+{
+  "title": "🔥 test 🔥",
+  "rules": [
+    {
+      "description": "arrows to hjkl",
+      "manipulators": [
+        {
+          "type": "basic",
+          "description": "h",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

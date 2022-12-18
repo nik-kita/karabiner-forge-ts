@@ -1,7 +1,15 @@
+import { KeyCodeType } from './key-code.type';
+import { ModifierType } from './modifier.type';
+
 export type FromType<
-  KeyCode extends string = string,
-  Modifiers extends object = {},
+  KeyCode extends KeyCodeType = KeyCodeType,
 > = {
   key_code: KeyCode,
-  modifiers: Modifiers,
+  modifiers?: {
+    mandatory: ModifierType[],
+    optional?: ModifierType[],
+  } | {
+    mandatory?: ModifierType[],
+    optional: ModifierType[],
+  },
 };
