@@ -1,0 +1,72 @@
+{
+  "title": "🔥 Mouse clicks 🔥",
+  "rules": [
+    {
+      "description": "Enhance Spacebar",
+      "manipulators": [
+        {
+          "type": "basic",
+          "description": "hyper + spacebar = hyper2",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": [
+                "right_shift",
+                "right_command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "right_shift",
+            "modifiers": [
+              "right_control",
+              "right_option"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "description": "Mouse Clicks",
+      "manipulators": [
+        {
+          "type": "basic",
+          "description": "hyper + spacebar + j = mouse_left_click",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "right_shift",
+                "right_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": {
+            "pointing_button": "button1"
+          }
+        },
+        {
+          "type": "basic",
+          "description": "hyper + spacebar + k = mouse_right_click",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "right_shift",
+                "right_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": {
+            "pointing_button": "button2"
+          }
+        }
+      ]
+    }
+  ]
+}

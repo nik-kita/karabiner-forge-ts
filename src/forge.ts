@@ -84,7 +84,7 @@ export class Forge {
         } else {
           writeFile(`${karabinerPath.split('.json')[0]}.new.json`, JSON.stringify({
             ...karabiner,
-            title: `${this.title} new`,
+            title: `${this.title} new (${new Date().toISOString()})`,
           }, null, 2), { encoding: 'utf-8' }, (error) => {
             if (error) reject(error);
             resolve();

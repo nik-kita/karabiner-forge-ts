@@ -1,3 +1,6 @@
 import { FromType } from './from.type';
 
-export type ToType = FromType;
+// TODO split
+export type ToType = FromType | {
+  pointing_button: 'button1' | 'button2'
+}

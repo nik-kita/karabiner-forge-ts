@@ -18,9 +18,7 @@
           "to": {
             "key_code": "right_shift",
             "modifiers": [
-              "right_command",
-              "right_control",
-              "right_option"
+              "right_command"
             ]
           },
           "to_if_alone": {
