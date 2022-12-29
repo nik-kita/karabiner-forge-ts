@@ -1,0 +1,28 @@
+{
+  "title": "||| open terminal |||",
+  "rules": [
+    {
+        "description": "right_option + right_command + t",
+        "manipulators": [
+            {
+                "from": {
+                    "key_code": "t",
+                    "modifiers": {
+                        "mandatory": [
+                            "right_command",
+                            "right_option"
+                        ]
+                    }
+                },
+                "to": [
+                    {
+                        "shell_command": "open -aterminal ~"
+                    }
+                ],
+                "type": "basic"
+            }
+        ]
+    }
+  ]
+}
+

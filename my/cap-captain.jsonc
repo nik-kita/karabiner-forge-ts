@@ -1,0 +1,327 @@
+{
+  "title": "A ===> cap-captain |||",
+  "url": "TODO",
+  "version": "0.0.1",
+  "maintainers": [
+    "nik-kita"
+  ],
+  "author": "TODO",
+  "website": "TODO",
+  "json_url": "TODO",
+  "import_url": "TODO",
+  "gallery_url": "TODO",
+  "repo": "TODO",
+  "rules": [
+    {
+      "description": "toggle keyboard to mouse",
+      "manipulators": [
+        {
+          "description": "(left_command + spacebar if mouse 0) => mouse 1",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 0
+            }
+          ],
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "mouse",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "description": "(spacebar if mouse 1) => mouse 0",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "spacebar"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "mouse",
+                "value": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "keyboard as mouse",
+      "manipulators": [
+        {
+          "description": "(hjkl if mouse = 1) => slow mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": -444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(hjkl if mouse = 1) => slow mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": 444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(hjkl if mouse = 1) => slow mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": -444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(hjkl if mouse = 1) => slow mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": 444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(yuio if mouse = 1) => fast mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "y"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": -5444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(yuio if mouse = 1) => slow mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "u"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": 5444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(yuio if mouse = 1) => slow mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": -5444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(yuio if mouse = 1) => slow mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": 5444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(nm,. if mouse = 1) => normal mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "n"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": -2444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(nm,. if mouse = 1) => normal mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "m"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": 2444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(nm,. if mouse = 1) => normal mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "comma"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": -2444
+              }
+            }
+          ]
+        },
+        {
+          "description": "(nm,. if mouse = 1) => normal mouse",
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "mouse",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "period"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": 2444
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
